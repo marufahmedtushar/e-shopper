@@ -18,9 +18,14 @@ Route::get('/', function () {
 });
 
 
+Route::group(['middleware' => ['auth','admin']],function() {
+Route::get('/dashboard','AdminController@dashboard');
+
+});
+
 Route::group(['middleware' => ['auth','user']],function() {
 Route::get('/userprofile','IndexController@userprofile');
-Route::put('/userinfostore','IndexController@userinfostore');
+Route::put('/userinfosave/{id}','IndexController@userinfosave');
 
 });
 

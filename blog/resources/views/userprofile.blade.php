@@ -7,59 +7,60 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>My Profile | E-Shopper</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{asset('css/price-range.css')}}" rel="stylesheet">
+    <link href="{{asset('css/animate.css')}}" rel="stylesheet">
+	<link href="{{asset('css/main.css')}}" rel="stylesheet">
+	<link href="{{asset('css/responsive.css')}}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="{{asset('images/ico/favicon.ico')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('images/ico/apple-touch-icon-144-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('images/ico/apple-touch-icon-114-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('images/ico/apple-touch-icon-72-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{asset('images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head><!--/head-->
 
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-facebook"></i></a></li>
-								<li><a href=""><i class="fa fa-twitter"></i></a></li>
-								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
-		
+
+	<div class="header_top"><!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                                <li><a href=""><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+                                <li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+        
 <div class="header-middle"><!--header-middle-->
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
             <div class="logo pull-left">
-              <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+              <a href="/"><img src="images/home/logo.png" alt="" /></a>
             </div>
             <div class="btn-group pull-right">
               <div class="btn-group">
@@ -88,9 +89,7 @@
           <div class="col-sm-8">
             <div class="shop-menu pull-right">
               <ul class="nav navbar-nav">
-                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                
                 
                
                         <!-- Authentication Links -->
@@ -104,10 +103,10 @@
                                 </li>
                             @endif
                         @else
-                        	<li>
-                        		<a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
-                        	</li>
-                        	
+                            <li>
+                                <a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a>
+                            </li>
+                            
                             
 
                             <li><a href="/userprofile" class="nav-link {{ 'userprofile' == request()->path() ? 'active' : '' }}" class="nav-link"><i class="fa fa-user"></i>
@@ -130,10 +129,10 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                        
                         @endguest
                   
-              </ul>
+             </ul>
             </div>
           </div>
         </div>
@@ -141,7 +140,7 @@
 
     </div><!--/header-middle-->
 
-    				@if (session('status'))
+                    @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
@@ -154,51 +153,53 @@
                     @endif
 
   
-	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li class="nav-item"><a href="/" class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" class="nav-link">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+    
+        <div class="header-bottom"><!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li class="nav-item"><a href="/" class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" class="nav-link">Home</a></li>
+                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html" class="">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+                                        <li><a href="product-details.html">Product Details</a></li> 
+                                        <li><a href="checkout.html" class="">Checkout</a></li> 
+                                        <li><a href="cart.html">Cart</a></li> 
+                                        <li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
+                                        <li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
-	</header><!--/header-->
+                                <li><a href="404.html">404</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box pull-right">
+                            <input type="text" placeholder="Search"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-bottom-->
+
+
+	</header>
 
 	<section id="cart_items">
 		<div class="container">
@@ -207,13 +208,13 @@
 			
 			
 
-			<div class="register-req">
-				<p>Shopper Information</p>
+			<div class="register-req text-center">
+				<h2 class="title text-center">My Profile</h2>
 			</div><!--/register-req-->
 
 
 			<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="contact-info">
 	    				<address>
 	    					@foreach($users as $user)
@@ -221,147 +222,108 @@
 	    					<p>Name: {{$user->name}}</p>
 							<p>Mobile: {{$user->phone}}</p>
 							<p>Email: {{$user->email}}</p>
-							  @endif
-							@endforeach
+							  
 	    				</address>	
 					</div>
 				</div>
 
-				
-
-				@foreach(Auth::user()->userinfo as $info)
-				@if(isset($info->address))
-
-
-				<div class="col-md-4">
+				<div class="col-md-6">
 						<div class="contact-info">
 	    				<address>
 	    					
-	    					 
-	    					<p>Birthday: {{$info->birthday}}</p>
-							<p>Gender: {{$info->gender}}</p>
-							<p>Address: {{$info->address}}</p>
-							 
-							
+	    					<p>Birthday: {{$user->birthday}}</p>
+							<p>Gender: {{$user->gender}}</p>
+							<p>Division: {{$user->division}}</p>
+							<p>Address: {{$user->address}}</p>
+							  
 	    				</address>	
 					</div>
 				</div>
-				
+			</div>
+
 
 				
-	    		@else
 
-	    		<div class="col-sm-8">
+					
+
+			<div class="row">
+				<div class="col-md-12">
 	    			<div class="contact-form">
-	    				<div class="status alert alert-success" style="display: none"></div>
-				    	<form id="main-contact-form" action="/userinfostore" class="contact-form row" name="contact-form" method="POST">
+	    				<h2 class="title text-center">Update Profile</h2>
+	    				
+				    	<form id="main-contact-form" action="/userinfosave/{{$user->id}}" class="contact-form row" name="contact-form" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
-				            <div class="form-group col-md-6">
-				            	<label>Birthday:</label>
-				                <input type="text" name="birthday"id="datepicker" class="form-control" placeholder="Birthday">
+				            <div class="form-group col-md-4">
+				            	<label>Name:</label>
+				                <input type="text" name="name" class="form-control" required="required" value="{{$user->name}}">
 				            </div>
-				            <div class="form-group col-md-6">
+				            <div class="form-group col-md-4">
+				            	<label>Email:</label>
+				                <input type="email" name="email" class="form-control" required="required" value="{{$user->email}}">
+				            </div>
+
+				            <div class="form-group col-md-4">
+				            	<label>Mobile:</label>
+				                <input type="phone" name="phone" class="form-control" required="required" value="{{$user->phone}}">
+				            </div>
+				            <div class="form-group col-md-4">
+				            	<label>Birthday:</label>
+				                <input type="text" name="birthday"id="datepicker" class="form-control" value="{{$user->birthday}}">
+				            </div>
+				            <div class="form-group col-md-4">
 				            	<label>Gender:</label>
 				                <select class="form-control" name="gender">
-										<option>-- Gender --</option>
+										<option selected>{{$user->gender}}</option>
 										<option>Male</option>
 										<option>Female</option>
+										<option>Others</option>
+									</select>
+				            </div>
+
+				            <div class="form-group col-md-4">
+				            	<label>Division:</label>
+				                
+
+				                <select class="form-control" name="division">
+										<option selected>{{$user->division}}</option>
+										<option>Barisal</option>
+										<option>Chittagong</option>
+										<option>Dhaka</option>
+										<option>Khulna</option>
+										<option>Mymensingh</option>
+										<option>Rajshahi</option>
+										<option>Rangpur</option>
+										<option>Sylhet</option>
 									</select>
 				            </div>
 				            
 				            <div class="form-group col-md-12">
 				            	<label>Address:</label>
-				                <textarea name="address" required="required" class="form-control" rows="8" placeholder="Type Your Address Here"></textarea>
+				                <textarea name="address" required="required" class="form-control" rows="8">{{$user->address}}</textarea>
 				            </div>                        
 				            <div class="form-group col-md-12">
-				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
+				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Update Changes">
 				            </div>
 				        </form>
 	    			</div>
 	    		</div>
-	    		
-	    		@endif
-	    		@endforeach
-			</div>
+	    	</div>
+	    	@endif
+							@endforeach
 
-			<div class="shopper-informations">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="shopper-info">
-							<p>Shopper Information</p>
-							<form>
-								<input type="text" placeholder="Display Name">
-								<input type="text" placeholder="User Name">
-								<input type="password" placeholder="Password">
-								<input type="password" placeholder="Confirm password">
-							</form>
-							<a class="btn btn-primary" href="">Get Quotes</a>
-							<a class="btn btn-primary" href="">Continue</a>
-						</div>
-					</div>
-					<div class="col-sm-5 clearfix">
-						<div class="bill-to">
-							<p>Bill To</p>
-							<div class="form-one">
-								<form>
-									<input type="text" placeholder="Company Name">
-									<input type="text" placeholder="Email*">
-									<input type="text" placeholder="Title">
-									<input type="text" placeholder="First Name *">
-									<input type="text" placeholder="Middle Name">
-									<input type="text" placeholder="Last Name *">
-									<input type="text" placeholder="Address 1 *">
-									<input type="text" placeholder="Address 2">
-								</form>
-							</div>
-							<div class="form-two">
-								<form>
-									<input type="text" placeholder="Zip / Postal Code *">
-									<select>
-										<option>-- Country --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<select>
-										<option>-- State / Province / Region --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<input type="password" placeholder="Confirm password">
-									<input type="text" placeholder="Phone *">
-									<input type="text" placeholder="Mobile Phone">
-									<input type="text" placeholder="Fax">
-								</form>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="order-message">
-							<p>Shipping Order</p>
-							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
-							<label><input type="checkbox"> Shipping to bill address</label>
-						</div>	
-					</div>					
-				</div>
+	    		
+
+	    			
+
+
+
+				
+
+				
 				
 
 			
-	
-			
-		</div>
 	</section> <!--/#cart_items-->
 
 	
@@ -526,11 +488,11 @@
 	
 
 
-    <script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
+	<script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
+    <script src="{{asset('js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script >
     	$('#datepicker').datetimepicker({

@@ -21,20 +21,19 @@ class IndexController extends Controller
         return view('userprofile')->with('users',$users);
     }
 
-    public function userinfostore(Request $request)
+    public function userinfosave(Request $request,$id)
     {
-    	$this->validate($request,[
-            'birthday' => 'required',
-            'gender' => 'required',
-            'address' => 'required'
-        ]);
+    	
 
-        $userinfo = new UserInfo();
-        $userinfo-> user_id = Auth::id();
+        $userinfo = User::find($id);
+        $userinfo->name = $request->input('name');
+        $userinfo->phone = $request->input('phone');
+        $userinfo->email = $request->input('email');
         $userinfo->birthday = $request->input('birthday');
         $userinfo->gender = $request->input('gender');
+        $userinfo->division = $request->input('division');
         $userinfo->address = $request->input('address');
         $userinfo->save();
-    	return redirect('/userprofile')->with('status','Information added..');
+    	return redirect('/userprofile')->with('status','Information Updated..');
     }
 }
