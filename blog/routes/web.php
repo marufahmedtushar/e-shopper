@@ -19,9 +19,22 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => ['auth','admin']],function() {
+
 Route::get('/dashboard','AdminController@dashboard');
 
+Route::get('/users','AdminController@users');
+Route::put('/userroleupdate','AdminController@userroleupdate');
+Route::delete('/deleteuser/{id}','AdminController@userdelete');
+
+
+Route::get('/categories','AdminController@categories');
+Route::put('/catstore','AdminController@catstore');
+Route::put('/catupdate','AdminController@updatecat');
+
+
 });
+
+
 
 Route::group(['middleware' => ['auth','user']],function() {
 Route::get('/userprofile','IndexController@userprofile');

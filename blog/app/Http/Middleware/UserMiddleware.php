@@ -16,7 +16,7 @@ class UserMiddleware
      */
   public function handle($request, Closure $next)
     {
-        if (Auth::user()->user_type == 'user')
+        if (Auth::user()->user_type == 'user' || 'admin')
         {
             return $next($request);
 
