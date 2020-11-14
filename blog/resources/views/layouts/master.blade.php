@@ -32,13 +32,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
-      <link rel="stylesheet" href="{{asset('admin/assets/select2/css/select2.min.css')}}">
-  <link rel="stylesheet" href="{{asset('admin/assets/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+     
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">
 
+
+  
 
 
 
@@ -84,8 +85,14 @@
                             </li>
 
                             <li class="{{ 'categories' == request()->path() ? 'active' : '' }}">
-                                <a class="" href="/categories"><i class="fas fa-tag"></i>
+                                <a class="" href="/categories"><i class="fas fa-tags"></i>
                                     <span>Categories</span>
+                                </a>
+                            </li>
+
+                            <li class="{{ 'products' == request()->path() ? 'active' : '' }}">
+                                <a class="" href="/products"><i class="fas fa-cubes"></i>
+                                    <span>Products</span>
                                 </a>
                             </li>
                         
@@ -540,7 +547,7 @@
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
 
-    <script src="{{asset('admin/assets/select2/js/select2.full.min.js')}}"></script>
+    
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"></script>
     @yield('js')

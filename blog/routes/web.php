@@ -32,6 +32,8 @@ Route::put('/catstore','AdminController@catstore');
 Route::put('/catupdate','AdminController@updatecat');
 
 
+Route::get('/products','AdminController@products');
+Route::get('/addproducts','AdminController@addproducts');
 });
 
 

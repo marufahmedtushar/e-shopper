@@ -75,4 +75,18 @@ class AdminController extends Controller
 
         return redirect('/categories')->with('status','Category Updated...');
     }
+
+    public function products()
+    {
+    	
+        return view('admin.products');
+
+    }
+
+    public function addproducts()
+    {
+        $categories = Category::all();
+        return view('admin.addproducts')->with('categories',$categories);
+
+    }
 }
