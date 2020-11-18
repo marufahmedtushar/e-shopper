@@ -6,13 +6,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\UserInfo;
+use App\Category;
+use App\Product;
 
 
 class IndexController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $products = Product::all();
+        $category = Category::all();
+        return view('index')->with('products',$products)->with('category',$category);
     }
 
      public function userprofile(Request $request)
@@ -35,5 +39,19 @@ class IndexController extends Controller
         $userinfo->address = $request->input('address');
         $userinfo->save();
     	return redirect('/userprofile')->with('status','Information Updated..');
+    }
+
+    public function categorydetails($id)
+    {
+        $category = Category::find($id);
+        $categories = Category::all();
+        return view('categorydetails')->with('category',$category)->with('categories',$categories);
+    }
+    public function productdetails($id)
+    {
+        $product = Product::find($id);
+        $categories = Category::all();
+        $products = Product::all();
+        return view('productdetails')->with('product',$product)->with('categories',$categories)->with('products',$products);
     }
 }

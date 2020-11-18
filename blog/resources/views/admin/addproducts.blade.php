@@ -7,16 +7,26 @@
 	<div class="col-md-8 ">
 		<div class="card">
 			<div class="card-body">
-				<form>
+				<form action="/productstore" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
 					
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
 								<h5 class="modal-title">Software</h5>
+								<label>Name:</label>
+								<input type="text" class="form-control" name="name">
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<h5 class="modal-title"></h5>
 								<label>Os:</label>
 								<input type="text" class="form-control" name="os">
 							</div>
 						</div>
+						
 					</div>
 					<div>
 						<h5>Design</h5>
@@ -74,7 +84,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<label></label>
-									<select class="custom-select" name="user_type"class="form-control" id="user_type">
+									<select class="custom-select" name="categories"class="form-control">
 										@foreach($categories as $cat)
 										<option value="{{$cat->id}}">{{$cat->name}}</option>
 										@endforeach
@@ -84,19 +94,7 @@
 						</div>
 					</div>
 					<div>
-						<h5 class="modal-title">Status</h5>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									
-									<label></label>
-									<select class="custom-select" name="user_type"class="form-control" id="user_type">
-										<option value="1">Available</option>
-										<option value="0">Not Available</option>
-									</select>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -105,15 +103,32 @@
 					<div class="card">
 						<div class="card-body">
 							<div>
+
+								<h5 class="modal-title">Status</h5>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									
+									<label></label>
+									<select class="custom-select" name="status"class="form-control">
+										<option value="1">Available</option>
+										<option value="0">Not Available</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+
 								<h5>Price</h5>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
 											<label></label>
-											<input type="text" class="form-control" name="expandable">
+											<input type="text" class="form-control" name="price">
 										</div>
 									</div>
 								</div>
+
 							</div>
 							
 						</div>
@@ -160,7 +175,7 @@
 								<div class="form-group">
 									
 									<label>number of cores:</label>
-									<input type="text" class="form-control" name="number of cores">
+									<input type="text" class="form-control" name="numberofcores">
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -198,31 +213,31 @@
 									<div class="input-group mb-3">
 										
 										<div class="custom-file">
-											<input type="file" class="custom-file-input" id="inputGroupFile01">
+											<input type="file" class="custom-file-input" name="img1">
 											<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 										</div>
 									</div><div class="input-group mb-3">
 									
 									<div class="custom-file">
-										<input type="file" class="custom-file-input" id="inputGroupFile01">
+										<input type="file" class="custom-file-input" name="img2">
 										<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 									</div>
 								</div><div class="input-group mb-3">
 								
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="inputGroupFile01">
+									<input type="file" class="custom-file-input" name="img3">
 									<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 								</div>
 							</div><div class="input-group mb-3">
 							
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputGroupFile01">
+								<input type="file" class="custom-file-input" name="img4">
 								<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 							</div>
 						</div><div class="input-group mb-3">
 						
 						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile01">
+							<input type="file" class="custom-file-input" name="img5">
 							<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 						</div>
 					</div>
@@ -251,19 +266,19 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>video:</label>
-					<input type="text" class="form-control" name="video">
+					<input type="text" class="form-control" name="vedio">
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>primary:</label>
-					<input type="text" class="form-control" name="primary"  id="cat_id">
+					<input type="text" class="form-control" name="primary">
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>secondary:</label>
-					<input type="text" class="form-control" name="secondary"  id="name">
+					<input type="text" class="form-control" name="secondary">
 				</div>
 			</div>
 			
@@ -278,7 +293,7 @@
 				<div class="form-group">
 					
 					<label>Battery:</label>
-					<input type="text" class="form-control" name="battery"  id="name">
+					<input type="text" class="form-control" name="battery">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -298,13 +313,13 @@
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>Wi-Fi:</label>
-					<input type="text" class="form-control" name="Wi-Fi"  id="name">
+					<input type="text" class="form-control" name="wifi">
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
 					<label>internet:</label>
-					<input type="text" class="form-control" name="internet"  id="name">
+					<input type="text" class="form-control" name="internet">
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -316,7 +331,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>bluetooth:</label>
-					<input type="text" class="form-control" name="bluetooth"  id="name">
+					<input type="text" class="form-control" name="bluetooth">
 				</div>
 			</div>
 			
@@ -338,7 +353,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>radio:</label>
-					<input type="text" class="form-control" name="radio"  id="name">
+					<input type="text" class="form-control" name="radio" >
 				</div>
 			</div>
 			
@@ -362,24 +377,24 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>first arrival:</label>
-					<input class="form-control" type="month" value="2018-05" id="example-month-input">
+					<input class="form-control" type="month" value="2018-05" id="example-month-input" name="firstarrival">
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Manufactured By:</label>
-					<input type="text" class="form-control" name="Manufactured By"  id="name">
+					<input type="text" class="form-control" name="manufacturedby">
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="form-group">
 					<label>SIM:</label>
-					<input type="text" class="form-control" name="SIM"  id="name">
+					<input type="text" class="form-control" name="SIM">
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
+					<button type="submit" class="btn text-light"style="background-color: #881DFD;">Submit</button>
 				</div>
 			</div>
 			

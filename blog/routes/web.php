@@ -34,6 +34,8 @@ Route::put('/catupdate','AdminController@updatecat');
 
 Route::get('/products','AdminController@products');
 Route::get('/addproducts','AdminController@addproducts');
+Route::put('/productstore','AdminController@productstore');
+Route::get('/viewproduct/{id}','AdminController@productdetails');
 });
 
 
@@ -47,3 +49,5 @@ Route::put('/userinfosave/{id}','IndexController@userinfosave');
 Auth::routes();
 
 Route::get('/', 'IndexController@index');
+Route::get('/categorydetails/{id}', 'IndexController@categorydetails');
+Route::get('/productdetails/{id}', 'IndexController@productdetails');
